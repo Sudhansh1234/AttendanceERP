@@ -1,0 +1,109 @@
+<html lang="en">
+<link href="attendance.css" rel="stylesheet">
+
+
+
+<body>
+    <div class="form">
+        <div id="left">
+            <div class="title">Welcome to Vidyalankar College portal<br><span>Sign in to continue</span></div>
+            <input type="email" placeholder="Email" id="email" class="input">
+            <input type="password" placeholder="Password" id="password" class="input">
+            <select name="select" id="select" placeholder="Type">
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button class="button-confirm" id="signin">Let`s go →</button>
+        </div>
+        <img id="img" src="1.png" />
+    </div>
+</body>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js";
+    import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+
+    const firebaseConfig = {
+
+        apiKey: "AIzaSyCi9v09k6xILtMDc1ezEi3GtVLEDqOAXuM",
+        authDomain: "attendanceerp-a224b.firebaseapp.com",
+        databaseURL: "https://attendanceerp-a224b-default-rtdb.firebaseio.com",
+        projectId: "attendanceerp-a224b",
+        storageBucket: "attendanceerp-a224b.appspot.com",
+        messagingSenderId: "594131242676",
+        appId: "1:594131242676:web:1442172c91b81e49ac11e1",
+        measurementId: "G-PELESS2395"
+
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+    const database = getDatabase(app);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('signin').addEventListener('click', async function (e) {
+
+
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var userType = document.getElementById('select').value;
+
+            try {
+                const branches = ['INFT', 'EXTC', 'ETRX', 'CMPN'];
+                const years = ['FE', 'SE', 'TE', 'BE']
+                const divisions = ["Divison A", "Divison B", "Teachers"];
+                for (const branch of branches) {
+                    for (const year of years) {
+                        for (const division of divisions) {
+
+                            const userPath = `users/${branch}/${year}/${division}/${email.replace(/\./g, '_')}`;
+
+
+                            const userRef = ref(database, userPath);
+                            const snapshot = await get(userRef);
+
+                            if (snapshot.exists()) {
+                                const storedPassword = snapshot.child('password').val();
+                                const storedUserType = snapshot.child('userType').val();
+
+
+
+                                if (storedUserType === userType && storedPassword === password) {
+                                    localStorage.setItem('userRef', email);
+                                    localStorage.setItem('userType', userType);
+                                    localStorage.setItem('divison', division);
+                                    localStorage.setItem('year', year);
+                                    localStorage.setItem('branch', branch);
+                                    if (division === "Teachers") {
+                                        window.location.href = "teacherlogin.html";
+                                    } else {
+                                        window.location.href = "studentlogin.html";
+                                    }
+                                    console.log(`User authenticated in ${division}`);
+                                    return;
+                                } else {
+                                    alert(`Invalid password or usertype in ${division}`);
+                                }
+                            } else {
+                                console.log(`User not found in ${branch} ${year} ${division}`);
+                            }
+                        }
+                    }
+                }
+
+                alert("User not found in any divison");
+            }
+            catch (error) {
+                // Handle errors
+                console.error("Database Error:", error);
+                alert('Error during sign-in');
+            }
+        });
+    });
+</script>
+<script src="attendance.js"></script>
+
+</html>

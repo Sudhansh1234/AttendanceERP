@@ -1,0 +1,310 @@
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+
+.mainInner {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.mainInner div {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 0px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #070124 0%, #3F5EFB 100%);
+}
+
+.sidebarMenuInner {
+    margin-top: 0px;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li {
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li span {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.sidebarMenuInner li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input[type="checkbox"]:checked~#sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type="checkbox"]:checked~#main {
+    transform: translateX(214px);
+    transition: transform 250ms ease-in-out;
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 30px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+}
+
+h1 {
+    color: black;
+    animation: fadeIn 1s forwards;
+    border-bottom: 7px solid blue;
+    width: 0px;
+
+
+
+}
+
+@keyframes fadeIn {
+
+    to {
+        border-width: 100%;
+        color: blue;
+        width: 500px;
+
+    }
+}
+
+
+h1 {
+    margin-top: 79px;
+    margin-left: 710px;
+    text-align: center;
+
+    font-family: system-ui, sans-serif;
+    font-size: 5rem;
+    cursor: pointer;
+}
+
+
+
+label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input {
+    padding: 8px;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.header {
+
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #070124;
+    position: fixed;
+    height: 80px !important;
+    overflow: hidden;
+    top: 0%;
+    z-index: 10;
+
+}
+
+
+
+#rollNumberLabel {
+    margin-top: 150px;
+    font-size: 30px;
+}
+
+#checkattendance {
+
+    margin-left: 0px;
+    scale: 1.5;
+}
+
+.did-floating-label-content {
+    position: relative;
+    margin-bottom: 20px;
+    width: 1100px;
+    margin-left: 500px;
+
+}
+
+.did-floating-label {
+
+    color: black;
+    font-size: 40px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 11px;
+    padding: 0 5px;
+    background: #fff;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.did-floating-input {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 40px;
+    display: block;
+    width: 900px;
+    height: 70px;
+    padding: 0px;
+    background: #fff;
+    color: black;
+    border: 1px solid #3D85D8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-inline: 20px;
+
+    &:focus {
+        outline: none;
+
+        ~.did-floating-label {
+            top: -8px;
+            font-size: 13px;
+        }
+    }
+}
+
+
+
+.did-floating-input:not(:placeholder-shown)~.did-floating-label {
+    top: -8px;
+    font-size: 13px;
+}
+
+
+.did-floating-label {
+    font-weight: 600;
+
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    transition: transform 250ms ease-in-out;
+}

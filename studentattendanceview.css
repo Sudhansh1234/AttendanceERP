@@ -1,0 +1,329 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0px;
+    animation: fadeIn 1.5s ease-in-out forwards;
+
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    margin-left: 350px;
+
+}
+
+.table {
+
+    width: 80%;
+
+    border-collapse: collapse;
+    transition: transform 250ms ease-in-out;
+}
+
+th,
+td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    width: fit-content;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+canvas {
+    max-width: 300px;
+    max-height: 210px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+
+    }
+}
+
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #070124;
+    position: fixed;
+    height: 80px !important;
+    overflow: hidden;
+    top: 0%;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    margin-left: 750px;
+    font-size: 40px;
+    width: fit-content;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+html,
+body {
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    width: 100%;
+
+}
+
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #070124;
+    position: fixed;
+    height: 80px !important;
+    overflow: hidden;
+    top: 0%;
+    z-index: 10;
+}
+
+.main {
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+    margin-top: 60px;
+}
+
+.mainInner {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.mainInner div {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: linear-gradient(180deg, #070124 0%, #3F5EFB 100%);
+}
+
+.sidebarMenuInner {
+    margin-top: 0px;
+    padding: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li {
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.sidebarMenuInner li span {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.sidebarMenuInner li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+input[type="checkbox"]:checked~#sidebarMenu {
+    transform: translateX(0);
+}
+
+input[type="checkbox"]:checked~.table {
+    transform: translateX(214px);
+    transition: transform 250ms ease-in-out;
+}
+
+input[type=checkbox] {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    display: none;
+}
+
+.sidebarIconToggle {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 30px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+.spinner {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+input[type=checkbox]:checked~.sidebarIconToggle>.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+.info {
+    margin-left: 350px;
+    width: 1227px;
+    height: 150px;
+    border: #070124 2px solid;
+
+}
+
+
+#name {
+    width: fit-content;
+    left: 100%;
+    font-size: 40px;
+    margin: 10px;
+
+}
+
+.loader {
+
+    position: fixed;
+    right: 65%;
+    top: 16%;
+    width: 20px;
+    /* Adjust the width */
+    height: 20px;
+    /* Adjust the height */
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: #3498db;
+    /* Adjust the color */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#rollno {
+    width: fit-content;
+    left: 100%;
+    font-size: 40px;
+    margin: 10px;
+    margin-top: 30px;
+
+}
+
+#totalat {
+
+    width: fit-content;
+    position: relative;
+    right: -40%;
+    font-size: 40px;
+    margin: 10px;
+    top: -85%
+}
+
+#status {
+    width: fit-content;
+    position: relative;
+    right: -40%;
+    font-size: 40px;
+    margin: 10px;
+    top: -75%
+}

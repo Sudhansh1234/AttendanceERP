@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <link href="teachercheckattendance.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance</title>
+
+</head>
+
+<body>
+
+    <input type="checkbox" class="openSidebarMenu" id="openSidebarMenu">
+    <label for="openSidebarMenu" class="sidebarIconToggle">
+        <div class="spinner diagonal part-1"></div>
+        <div class="spinner horizontal"></div>
+        <div class="spinner diagonal part-2"></div>
+    </label>
+    <div id="sidebarMenu">
+        <ul class="sidebarMenuInner">
+            <li>Welcome, <span>to vidyalankar portal</span></li>
+            <li><a href="https://vanila.io" target="_blank">Attendance</a></li>
+            <li><a href="https://instagram.com/plavookac" target="_blank">Assignments</a></li>
+            <li><a href="https://twitter.com/plavookac" target="_blank">Upload Lectures</a></li>
+            <li><a href="https://www.youtube.com/channel/UCDfZM0IK6RBgud8HYGFXAJg" target="_blank">Timetable</a></li>
+            <li><a href="https://www.linkedin.com/in/plavookac/" target="_blank">About</a></li>
+        </ul>
+    </div>
+    <div class="header"></div>
+    <div id="main">
+        <h1>Attendance</h1>
+
+        <label id="rollNumberLabel">Enter Roll Number:</label>
+
+
+        <div class="did-floating-label-content">
+            <input id="rollno" class="did-floating-input" type="text" placeholder=" ">
+            <label class="did-floating-label">Roll number</label>
+        </div>
+
+        <button id="checkattendance" onclick="markAttendance()">Check Attendance</button>
+
+        <script src="teachercheckattendance.js">
+        </script>
+    </div>
+</body>
+
+</html>

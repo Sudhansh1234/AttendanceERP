@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+body {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    font-family: 'Varela Round', sans-serif;
+    overflow-x: hidden;
+    height: 1080px;
+    background-image: url('vidyalankar.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: #070124;
+    position: fixed;
+    height: 80px !important;
+    overflow: hidden;
+    top: 0%;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.main {
+
+    display: block;
+    height: 100%;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.welcome {
+    top: 20%;
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+    margin-bottom: 30px;
+    color: #323232;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    left: -15%;
+    width: 100%;
+    height: 82px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+
+    }
+}
+
+.button-container {
+    margin-left: 280px;
+    position: relative;
+    top: 10%;
+    display: flex;
+    justify-content: space-around;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    width: fit-content;
+}
+
+.home-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 30%;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}
+
+.action-button {
+    width: fit-content;
+    height: fit-content;
+    border: 2px;
+    background: transparent;
+
+}
+
+img {
+    width: 530px;
+    height: 350px;
+    opacity: 100;
+
+
+}
+
+.button-label {
+    margin-top: 20px;
+    font-size: 40px;
+    font-family: monospace;
+
+}
+
+.action-button:hover img {
+    transition: ease-in-out 0.2s;
+    transform: scale(1.2);
+}
+
+#timetable {
+    margin-left: 250px;
+}
